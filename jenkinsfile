@@ -13,7 +13,7 @@ pipeline {
             steps { 
                 echo 'Run terraform file'
                 sh '''
-                cd terraforminfra
+                cd terraform
                 terraform init
                 terraform validate
                 terraform fmt

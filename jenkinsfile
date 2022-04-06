@@ -1,17 +1,21 @@
 pipeline { 
     environment { 
-        registry = "adigade101/test-repo1" 
-        registryCredential = 'dockerhub_id' 
-        dockerImage = '' 
+        registry = "adigade101/finalrepo"
     }
     agent any 
     stages { 
         stage('Cloning our Git') { 
             steps { 
-                git branch:'main', url: 'https://github.com/adigade101/test-repo1.git' 
+                git branch:'main', url: 'https://github.com/adigade101/finalrepo.git' 
             }
         } 
-        
+        stage('Running terraform') { 
+            steps { 
+                echo 'Run terraform file'
+                sh "cd terraform/"
+                sh "terraform apply" 
+            }
+        }
        
     }
 }

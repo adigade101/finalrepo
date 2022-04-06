@@ -12,11 +12,11 @@ pipeline {
         stage('Running terraform') { 
             steps { 
                 echo 'Run terraform file'
-                sh "cd terraform"
-                sh "terraform init"
-                sh "terraform validate"
-                sh "terraform fmt"
-                sh "terraform apply -auto-approve" 
+                sh 'cd terraform'
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform fmt'
+                sh 'terraform apply -auto-approve'
             }
         }
        
